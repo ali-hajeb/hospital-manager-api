@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 const corsOptions = {
-  origin: ['http://localhost:3007'],
+  origin: ['http://10.3.10.12:3007', 'http://localhost:3007'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   credentials: true, // if you send cookies / Authorization header
 };

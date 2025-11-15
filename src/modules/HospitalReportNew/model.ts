@@ -1,0 +1,130 @@
+import mongoose, { Schema } from 'mongoose';
+
+const HospitalSchema = new Schema({
+  config: {
+    year: String,
+    hospital: String,
+    city: String,
+    manager: String,
+    phone: String,
+    description: String,
+    timestamp: String,
+    version: String
+  },
+  treatment: {
+    approvedBeds: Number,
+    activeBeds: Number,
+    occupancy: Number,
+    outpatients: Number,
+    inpatients: Number,
+    emergency: Number,
+    specialistVisits: Number,
+    surgeries: Number,
+    patientGrowth: Number,
+    utilization: Number,
+    totalPatients: Number,
+    avgStay: Number,
+    bedTurnover: Number,
+    efficiencyScore: Number,
+    revenuePerBed: Number
+  },
+  overhead: {
+    drug: Number,
+    medical: Number,
+    vehicle: Number,
+    contractor: Number,
+    food: Number,
+    maintenance: Number,
+    it: Number,
+    other: Number,
+    total: Number,
+    inflationRate: Number,
+    drugPercent: Number,
+    monthly: Number,
+    largestCost: String,
+    costPerPatient: Number,
+    efficiencyRatio: Number
+  },
+  personnel: {
+    treasury: Number,
+    hourlyDoctors: Number,
+    doctorPerf: Number,
+    nursePerf: Number,
+    staffPerf: Number,
+    overtime: Number,
+    insurance: Number,
+    benefits: Number,
+    totalStaff: Number,
+    total: Number,
+    doctorShare: Number,
+    avgSalary: Number,
+    laborCostRatio: Number,
+    costPerEmployee: Number
+  },
+  revenue: {
+    treatment: Number,
+    pharmacy: Number,
+    rental: Number,
+    waste: Number,
+    other: Number,
+    insuranceFee: Number,
+    total: Number,
+    growthRate: Number,
+    treatmentShare: Number,
+    monthly: Number,
+    revenuePerPatient: Number,
+    diversityScore: Number
+  },
+  profit: {
+    revenue: Number,
+    overhead: Number,
+    personnel: Number,
+    totalCost: Number,
+    operatingProfit: Number,
+    depreciation: Number,
+    taxes: Number,
+    nonOperational: Number,
+    netProfit: Number,
+    margin: Number,
+    roi: Number,
+    currentRatio: Number,
+    debtRatio: Number
+  },
+  analytics: {
+    targetProfit: Number,
+    targetGrowth: Number,
+    debtRatio: Number,
+    forecastPeriod: Number,
+    gapAnalysis: Number,
+    requiredRevenue: Number,
+    requiredCostCut: Number,
+    breakEvenPoint: Number,
+    financialHealth: Number,
+    riskLevel: String
+  },
+  reports: [{
+    date: String,
+    hospital: String,
+    patients: Number,
+    beds: Number,
+    personnelCost: Number,
+    overheadCost: Number,
+    treatmentRevenue: Number,
+    pharmacyRevenue: Number,
+    profit: Number,
+    margin: Number,
+    efficiency: Number,
+    risk: String
+  }],
+  records: Number,
+  lastUpdate: String,
+  system: {
+    version: String,
+    loadTime: Number,
+    screenWidth: Number,
+    device: String,
+    browser: String
+  }
+});
+
+export default mongoose.model('HospitalNew', HospitalSchema);
